@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header > h1 {
+    text-align: center;
+}
+
+section {
+    text-align: center;
+
+    
+}
+
+#esp {
+    padding: 5px 40px;
+    margin-bottom: 6px;
+}
+
+button {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+}
+
+.del {
+    width: 100%;
+    margin: 0 0 0 64px;
+}
+
+.bdel {
+    width: 115px;
+}
+
+.igual {
+    width: 115px;
+    background-color: red;
+    border-radius: 4px;
+    border-style:solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.igual:hover {
+    background-color: rgb(253, 47, 47);
+}
+
+.igual:active {
+    background-color: green;
+}
