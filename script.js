@@ -27,7 +27,6 @@ function mais() {
     esp.value = `+`
     foioperador = true
     operador = 1
-    continua = true
     }
 
 function multp() {
