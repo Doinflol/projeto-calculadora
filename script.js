@@ -1,16 +1,12 @@
 let valor
 let foioperador = false
 let operador
-let continua = false
 let fator
 
 function digitar(n) {
     let esp = document.getElementById('esp')
-    if (foioperador) {
-        esp.value = ''
-        foioperador = false
-    }
-    esp.value += n
+    foioperador = false
+    esp.value = n
 }
 
 function del() {
@@ -23,34 +19,58 @@ function del() {
 
 function mais() {
     let esp = document.getElementById('esp')
-    valor = Number(esp.value)
-    esp.value = `+`
-    foioperador = true
-    operador = 1
+    if (foioperador == true) {
+        esp.value = `+`
+        foioperador = true
+        operador = 1
+    } else {
+        valor = Number(esp.value)
+        esp.value = `+`
+        foioperador = true
+        operador = 1
     }
+}
 
 function multp() {
     let esp = document.getElementById('esp')
-    valor = Number(esp.value)
-    esp.value = `X`
-    foioperador = true
-    operador = 2
+    if (foioperador == true) {
+        esp.value = `X`
+        foioperador = true
+        operador = 2
+    } else {
+        valor = Number(esp.value)
+        esp.value = `X`
+        foioperador = true
+        operador = 2
+    }
 }
 
 function subt() {
     let esp = document.getElementById('esp')
-    valor = Number(esp.value)
-    esp.value = `-`
-    foioperador = true
-    operador = 3
+    if (foioperador == true) {
+        esp.value = `-`
+        foioperador = true
+        operador = 3
+    } else {
+        valor = Number(esp.value)
+        esp.value = `-`
+        foioperador = true
+        operador = 3
+    }
 }
 
 function divisao() {
     let esp = document.getElementById('esp')
-    valor = Number(esp.value)
-    esp.value = `/`
-    foioperador = true
-    operador = 4
+    if (foioperador == true) {
+        esp.value = `/`
+        foioperador = true
+        operador = 4
+    } else {
+        valor = Number(esp.value)
+        esp.value = `/`
+        foioperador = true
+        operador = 4
+    }
 }
 
 function result() {
@@ -68,7 +88,6 @@ function result() {
     } else if (operador == 4) {
     valor /= fator
     esp.value = `${valor}`
-}
-    
+}   
 }
 
