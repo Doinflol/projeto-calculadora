@@ -9,14 +9,6 @@ function digitar(n) {
     esp.value = n
 }
 
-function del() {
-    let esp = document.getElementById('esp')
-    esp.value = ''
-    valor = 0
-    fator = 0
-    operador = 0
-}
-
 function mais() {
     let esp = document.getElementById('esp')
     if (foioperador == true) {
@@ -24,14 +16,19 @@ function mais() {
         foioperador = true
         operador = 1
     } else {
+        if (valor != null) {
+            valor += Number(esp.value)
+            esp.value = `${valor}+`
+        } else {
         valor = Number(esp.value)
         esp.value = `+`
         foioperador = true
         operador = 1
+        }
     }
 }
 
-function multp() {
+function multp() { 
     let esp = document.getElementById('esp')
     if (foioperador == true) {
         esp.value = `X`
@@ -89,5 +86,13 @@ function result() {
     valor /= fator
     esp.value = `${valor}`
 }   
+}
+
+function del() {
+    let esp = document.getElementById('esp')
+    esp.value = ''
+    valor = null
+    fator = null
+    operador = null
 }
 
