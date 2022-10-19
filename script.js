@@ -2,6 +2,7 @@ let valor
 let foioperador = false
 let operador
 let fator
+let inicial
 
 function digitar(n) {
     let esp = document.getElementById('esp')
@@ -11,86 +12,125 @@ function digitar(n) {
 
 function mais() {
     let esp = document.getElementById('esp')
+    let proximo = document.getElementById('hist')
     if (foioperador == true) {
-        esp.value = `+`
+        esp.value = `${valor}`
         foioperador = true
-        operador = 1
+        operador = '+'
     } else {
         if (valor != null) {
             valor += Number(esp.value)
-            esp.value = `${valor}+`
+            inicial += Number(esp.value)
+            esp.value = `${valor}`
+            proximo.value = `${valor}+`
         } else {
         valor = Number(esp.value)
-        esp.value = `+`
+        inicial = Number(esp.value)
+        esp.value = `${valor}`
+        proximo.value = `${inicial}+`
         foioperador = true
-        operador = 1
+        operador = '+'        
         }
     }
 }
 
 function multp() { 
     let esp = document.getElementById('esp')
+    let proximo = document.getElementById('hist')
     if (foioperador == true) {
-        esp.value = `X`
+        esp.value = `${valor}`
         foioperador = true
-        operador = 2
+        operador = 'x'
     } else {
+        if (valor != null) {
+            valor *= Number(esp.value)
+            inicial *= Number(esp.value)
+            esp.value = `${valor}`
+            proximo.value = `${valor}x`
+        } else {
         valor = Number(esp.value)
-        esp.value = `X`
+        inicial = Number(esp.value)
+        esp.value = `${valor}`
+        proximo.value = `${inicial}x`
         foioperador = true
-        operador = 2
+        operador = 'x'        
+        }
     }
 }
 
 function subt() {
     let esp = document.getElementById('esp')
     if (foioperador == true) {
-        esp.value = `-`
+        esp.value = `${valor}`
         foioperador = true
-        operador = 3
+        operador = '-'
     } else {
+        if (valor != null) {
+            valor -= Number(esp.value)
+            inicial -= Number(esp.value)
+            esp.value = `${valor}`
+            proximo.value = `${valor}-`
+        } else {
         valor = Number(esp.value)
-        esp.value = `-`
+        inicial = Number(esp.value)
+        esp.value = `${valor}`
+        proximo.value = `${inicial}-`
         foioperador = true
-        operador = 3
+        operador = '-'        
+        }
     }
 }
 
 function divisao() {
     let esp = document.getElementById('esp')
     if (foioperador == true) {
-        esp.value = `/`
+        esp.value = `${valor}`
         foioperador = true
-        operador = 4
+        operador = '/'
     } else {
+        if (valor != null) {
+            valor /= Number(esp.value)
+            inicial /= Number(esp.value)
+            esp.value = `${valor}`
+            proximo.value = `${valor}/`
+        } else {
         valor = Number(esp.value)
-        esp.value = `/`
+        inicial = Number(esp.value)
+        esp.value = `${valor}`
+        proximo.value = `${inicial}/`
         foioperador = true
-        operador = 4
+        operador = '/'        
+        }
     }
 }
 
 function result() {
     let esp = document.getElementById('esp')
-    let fator = Number(esp.value)    
-    if (operador == 1) {
+    let fator = Number(esp.value)   
+    let proximo = document.getElementById('hist') 
+    if (operador == '+') {
         valor += fator
+        proximo.value = `${inicial}+${fator}`
         esp.value = `${valor}`
-    } else if (operador == 2) {
+    } else if (operador == 'x') {
          valor *= fator
+         proximo.value = `${inicial}x${fator}`
          esp.value = `${valor}`
-    } else if (operador == 3) {
+    } else if (operador == '-') {
         valor -= fator
         esp.value = `${valor}`
-    } else if (operador == 4) {
+    } else if (operador == '/') {
     valor /= fator
     esp.value = `${valor}`
-}   
+}
+    valor = null
 }
 
 function del() {
     let esp = document.getElementById('esp')
+    let proximo = document.querySelector('#hist')
     esp.value = ''
+    hist.value = ''
     valor = null
     fator = null
     operador = null
