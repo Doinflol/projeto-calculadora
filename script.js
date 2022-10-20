@@ -39,6 +39,7 @@ function mais() {
             operador = '+'        
         }
     }
+    foioperador = true
 }
 
 function multp() { 
@@ -46,7 +47,7 @@ function multp() {
     let proximo = document.getElementById('hist')
     if (foioperador == true) {
         esp.value = `${valor}`
-        foioperador = true
+        proximo.value = `${inicial} x`
         operador = 'x'
     } else {
         if (valor != null) {
@@ -76,6 +77,7 @@ function multp() {
             operador = 'x'        
         }
     }
+    foioperador = true
 }
 
 function subt() {
@@ -116,6 +118,7 @@ function subt() {
             operador = '-'        
         }
     }
+    foioperador = true
 }
 
 function divisao() {
@@ -152,11 +155,12 @@ function divisao() {
         valor = Number(esp.value)
         inicial = Number(esp.value)
         esp.value = `${valor}`
-        proximo.value = `${inicial}/`
+        proximo.value = `${inicial} /`
         foioperador = true
         operador = '/'        
         }
     }
+    foioperador = true
 }
 
 function result() {
