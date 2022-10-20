@@ -6,8 +6,13 @@ let inicial
 
 function digitar(n) {
     let esp = document.getElementById('esp')
-    foioperador = false
-    esp.value = n
+    if (foioperador == true) {
+        esp.value = n
+        foioperador = false
+    } else {
+        esp.value += n
+        foioperador = false
+    }
 }
 
 function mais() {
@@ -23,6 +28,7 @@ function mais() {
             inicial += Number(esp.value)
             esp.value = `${valor}`
             proximo.value = `${valor} +`
+            foioperador = true
             operador = '+'
         } else {
             valor = Number(esp.value)
