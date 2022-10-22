@@ -3,15 +3,23 @@ let foioperador = false
 let operador
 let fator
 let inicial
+let resultado
+let repete
+let atual
+let ultimo
 
 function digitar(n) {
     let esp = document.getElementById('esp')
-    if (foioperador == true) {
+    if (foioperador == true || resultado == true) {
         esp.value = n
         foioperador = false
+        resultado = false
+        repete = false
+        ultimo = Number(esp.value)
     } else {
         esp.value += n
         foioperador = false
+        ultimo = Number(esp.value)
     }
 }
 
@@ -40,6 +48,8 @@ function mais() {
         }
     }
     foioperador = true
+    
+
 }
 
 function multp() { 
@@ -113,7 +123,7 @@ function subt() {
             valor = Number(esp.value)
             inicial = Number(esp.value)
             esp.value = `${valor}`
-            proximo.value = `${inicial}-`
+            proximo.value = `${inicial} -`
             foioperador = true
             operador = '-'        
         }
@@ -165,26 +175,52 @@ function divisao() {
 
 function result() {
     let esp = document.getElementById('esp')
-    let fator = Number(esp.value)   
-    let proximo = document.getElementById('hist') 
-    if (operador == '+') {
-        valor += fator
-        proximo.value = `${inicial} + ${fator} =`
-        esp.value = `${valor}`
+    let fator = Number(esp.value)
+    let proximo = document.getElementById('hist')
+    if (repete == true) {
+    if (operador == '+') { 
+        atual = fator
+        fator += ultimo
+        proximo.value = `${atual} + ${ultimo} =`
+        esp.value = `${fator}`
     } else if (operador == 'x') {
-         valor *= fator
-         proximo.value = `${inicial} x ${fator} =`
-         esp.value = `${valor}`
+        atual = fator
+        fator *= ultimo
+        proximo.value = `${atual} x ${ultimo} =`
+        esp.value = `${fator}`
     } else if (operador == '-') {
-        valor -= fator
-        proximo.value = `${inicial} - ${fator} =`
-        esp.value = `${valor}`
+        atual = fator
+        fator -= ultimo
+        proximo.value = `${atual} - ${ultimo} =`
+        esp.value = `${fator}`
     } else if (operador == '/') {
-        valor /= fator
-        proximo.value = `${inicial} / ${fator} =`
-        esp.value = `${valor}`
-}
+        atual = fator
+        fator /= ultimo
+        proximo.value = `${atual} / ${ultimo} =`
+        esp.value = `${fator}`
+    }
+    } else {
+        if (operador == '+') {
+            valor += fator
+            proximo.value = `${inicial} + ${fator} =`
+            esp.value = `${valor}`
+        } else if (operador == 'x') {
+             valor *= fator
+             proximo.value = `${inicial} x ${fator} =`
+             esp.value = `${valor}`
+        } else if (operador == '-') {
+            valor -= fator
+            proximo.value = `${inicial} - ${fator} =`
+            esp.value = `${valor}`
+        } else if (operador == '/') {
+            valor /= fator
+            proximo.value = `${inicial} / ${fator} =`
+            esp.value = `${valor}`
+        }
+    }
     valor = null
+    resultado = true
+    repete = true
 }
 
 function del() {
@@ -195,5 +231,8 @@ function del() {
     valor = null
     fator = null
     operador = null
+    resultado = null
+    repete = null
+    atual = null
 }
 
