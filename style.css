@@ -24,10 +24,30 @@ section {
     border-radius: 0px 0px 5px 5px;
     min-width: 280px;
     max-width: 500px;
+    display: flex;
+}
+
+#principal {
+    margin-left: 30px;
 }
 
 .botao {
-    width: 70px
+    width: 70px;
+}
+
+#seltab {
+    width: 150px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: gray;
+    border-style:solid ;
+
+}
+
+#seltab > h2 {
+    font-size: 16px;
+    margin-top: 1px;
 }
 
 #esp {
@@ -50,13 +70,10 @@ button {
     font-size: 16px;
 }
 
-.del {
-    width: 100%;
-    margin: 0 0 0 64px;
-}
+
 
 .bdel {
-    width: 115px;
+    width: 262px;
 }
 
 .igual {

@@ -7,6 +7,7 @@ let resultado
 let repete
 let atual
 let ultimo
+let valores = []
 
 function digitar(n) {
     let esp = document.getElementById('esp')
@@ -221,11 +222,19 @@ function result() {
     valor = null
     resultado = true
     repete = true
+    let gravado = document.getElementById('seltab')
+    let item = document.createElement('p')
+    valores.push(Number(proximo.value))
+    item.innerHTML = `${proximo.value} ${esp.value}`
+    gravado.appendChild(item)
+
 }
 
 function del() {
     let esp = document.getElementById('esp')
     let proximo = document.querySelector('#hist')
+    let gravado = document.getElementById('seltab')
+    let item = document.createElement('H2')
     esp.value = ''
     hist.value = ''
     valor = null
@@ -234,5 +243,5 @@ function del() {
     resultado = null
     repete = null
     atual = null
+    gravado.innerHTML = '<h2>Histórico</h2>'
 }
-
