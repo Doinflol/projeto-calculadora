@@ -10,9 +10,9 @@ header > h1 {
     background-color: white;
     margin: auto;
     margin-top: 4rem;
-    padding: 1rem 1rem 1rem 1rem;
-    min-width: 30rem;
-    max-width: 30rem;
+    padding: 1rem 0rem 1rem 0.1rem;
+    min-width: 28rem;
+    max-width: 28rem;
     border-radius: 5px 5px 0px 0px;
 
 }
@@ -21,19 +21,20 @@ section {
     text-align: center;
     background-color: white;
     margin: auto;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem 0rem 1rem 0.1rem;
     border-radius: 0px 0px 5px 5px;
-    min-width: 30rem;
-    max-width: 30rem;
+    min-width: 28rem;
+    max-width: 28rem;
     display: flex;
 }
 
 #principal {
-    margin-left: 30px;
+    margin-left: 0rem;
 }
 
 .botao {
     width: 70px;
+    margin-left: 0rem;
 }
 
 #seltab {
@@ -52,14 +53,16 @@ section {
 }
 
 #esp {
-    padding: 5px 40px;
+    padding: 0.3rem 2.5rem;
     margin-bottom: 15px;
+    margin-left: 0;
     font-size: 1rem;
 }
 
 #hist {
-    padding: 5px 40px;
+    padding: 0.3rem 2.5rem;
     margin-bottom: -1px;
+    margin-left: 0;
     font-size: 1rem;
     color: gray;
 }
