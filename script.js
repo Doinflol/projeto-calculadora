@@ -222,7 +222,7 @@ function result() {
     valor = null
     resultado = true
     repete = true
-    let gravado = document.getElementById('seltab')
+    let gravado = document.querySelector('.seltab')
     let item = document.createElement('p')
     valores.push(Number(proximo.value))
     item.innerHTML = `${proximo.value} ${esp.value}`
@@ -233,7 +233,7 @@ function result() {
 function del() {
     let esp = document.getElementById('esp')
     let proximo = document.querySelector('#hist')
-    let gravado = document.getElementById('seltab')
+    let gravado = document.querySelector('.seltab')
     let item = document.createElement('H2')
     esp.value = ''
     hist.value = ''

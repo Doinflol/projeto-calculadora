@@ -17,15 +17,15 @@ header > h1 {
 
 }
 
-section {
+.section {
     text-align: center;
     background-color: white;
     margin: auto;
     padding: 1rem 0rem 1rem 0.1rem;
     border-radius: 0px 0px 5px 5px;
-    min-width: 28rem;
-    max-width: 28rem;
+    width: 28rem;
     display: flex;
+
 }
 
 #principal {
@@ -37,7 +37,19 @@ section {
     margin-left: 0rem;
 }
 
-#seltab {
+@media(max-width: 600px) {
+
+    header > h1 {
+        min-width: 21rem;
+        max-width: 21rem;
+    }
+    
+    .seltab {
+        color: red;
+    }
+    }
+
+.seltab {
     width: 150px;
     margin-left: 10px;
     text-align: center;
@@ -47,7 +59,7 @@ section {
 
 }
 
-#seltab > h2 {
+.seltab > h2 {
     font-size: 1rem;
     margin-top: 1px;
 }
