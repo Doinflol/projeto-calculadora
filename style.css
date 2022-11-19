@@ -106,6 +106,7 @@ button {
         width: 21rem;
         display: flexbox;
         flex-direction:column;
+        margin-bottom: 10px;
     }
 
     .seltab{
@@ -115,7 +116,7 @@ button {
 
     h2{
         width: 21rem;
-        margin: auto;
+        margin-left: -34px;
     }
 
     .seltab{
